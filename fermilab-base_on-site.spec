@@ -1,6 +1,6 @@
 Name:		fermilab-base_on-site
 Version:	1.0
-Release:	6%{?dist}
+Release:	6.1%{?dist}
 Summary:	Pull in the packages required on the FNAL network
 
 Group:		Fermilab
@@ -10,8 +10,7 @@ URL:		https://github.com/fermilab-context-rpms/fermilab-base_on-site
 BuildArch:	noarch
 Requires:	krb5-workstation
 
-Requires:	fermilab-conf_doe-banner-console
-Requires:	fermilab-conf_doe-banner-login-screen
+Requires:	fermilab-conf_doe-banner
 Requires:	fermilab-conf_install-updates
 Requires:	fermilab-conf_kerberos
 Requires:	fermilab-conf_login-screen-no-user-list
@@ -25,7 +24,7 @@ Requires:	fermilab-conf_system-logger
 #  but can be removed without issue
 Recommends:	fermilab-conf_email-gateway
 Recommends:	fermilab-conf_firewall
-Recommends:	fermilab-conf_ssh-client
+Recommends:	fermilab-conf_ssh
 Recommends:	fermilab-conf_sssd
 Recommends:	fermilab-conf_timesync
 
@@ -56,6 +55,9 @@ your system meets these requirements.
 
 
 %changelog
+* Wed Apr 13 2022 Pat Riehecky <riehecky@fnal.gov> 1.0-6.1
+- Use rich dep set
+
 * Tue Mar 1 2022 Pat Riehecky <riehecky@fnal.gov> 1.0-6
 - Initial Build for EL9
 - Use rich deps to match yum group defs (minus yum repo)
