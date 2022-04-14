@@ -1,6 +1,6 @@
 Name:		fermilab-base_on-site
 Version:	1.0
-Release:	6.1%{?dist}
+Release:	7%{?dist}
 Summary:	Pull in the packages required on the FNAL network
 
 Group:		Fermilab
@@ -16,7 +16,7 @@ Requires:	fermilab-conf_kerberos
 Requires:	fermilab-conf_login-screen-no-user-list
 Requires:	fermilab-conf_ocsinventory
 Requires:	fermilab-conf_screenlock
-Requires:	fermilab-conf_ssh-server
+Requires:	fermilab-conf_ssh
 Requires:	fermilab-conf_system-logger
 
 %if 0%{?rhel} >= 8 || 0%{?fedora} >= 27
@@ -24,7 +24,6 @@ Requires:	fermilab-conf_system-logger
 #  but can be removed without issue
 Recommends:	fermilab-conf_email-gateway
 Recommends:	fermilab-conf_firewall
-Recommends:	fermilab-conf_ssh
 Recommends:	fermilab-conf_sssd
 Recommends:	fermilab-conf_timesync
 
@@ -55,6 +54,9 @@ your system meets these requirements.
 
 
 %changelog
+* Thu Apr 14 2022 Pat Riehecky <riehecky@fnal.gov> 1.0-7
+- Better requires for rich deps
+
 * Wed Apr 13 2022 Pat Riehecky <riehecky@fnal.gov> 1.0-6.1
 - Use rich dep set
 
